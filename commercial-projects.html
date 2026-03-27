@@ -31,6 +31,90 @@
 <div style="text-align:center; margin-top:40px;">
     <a href="index.html#portfolio" class="btn">Back to Portfolio</a>
 </div>
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
 
+    <img class="lightbox-img" id="lightbox-img">
+
+    <div class="controls">
+        <span class="prev">&#10094;</span>
+        <span class="next">&#10095;</span>
+    </div>
+
+    <div class="counter" id="counter"></div>
+</div>
+<script>
+let images = document.querySelectorAll(".gallery-item img");
+let lightbox = document.getElementById("lightbox");
+let lightboxImg = document.getElementById("lightbox-img");
+let counter = document.getElementById("counter");
+
+let currentIndex = 0;
+let zoom = 1;
+
+// OPEN
+images.forEach((img, index) => {
+    img.addEventListener("click", () => {
+        currentIndex = index;
+        showImage();
+        lightbox.style.display = "flex";
+    });
+});
+
+// SHOW IMAGE
+function showImage() {
+    lightboxImg.src = images[currentIndex].src;
+    counter.innerText = (currentIndex + 1) + " / " + images.length;
+    zoom = 1;
+    lightboxImg.style.transform = "scale(1)";
+}
+
+// NEXT
+document.querySelector(".next").onclick = () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage();
+};
+
+// PREV
+document.querySelector(".prev").onclick = () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage();
+};
+
+// CLOSE
+document.querySelector(".close").onclick = () => {
+    lightbox.style.display = "none";
+};
+
+// CLICK OUTSIDE CLOSE
+lightbox.onclick = (e) => {
+    if (e.target === lightbox) {
+        lightbox.style.display = "none";
+    }
+};
+
+// ZOOM
+lightboxImg.onclick = () => {
+    zoom = zoom === 1 ? 2 : 1;
+    lightboxImg.style.transform = "scale(" + zoom + ")";
+};
+
+// SWIPE (MOBILE)
+let startX = 0;
+
+lightbox.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+});
+
+lightbox.addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+
+    if (startX - endX > 50) {
+        document.querySelector(".next").click();
+    } else if (endX - startX > 50) {
+        document.querySelector(".prev").click();
+    }
+});
+</script>
 </body>
 </html>
