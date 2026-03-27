@@ -14,6 +14,9 @@
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
 </a>
 
+<a href="https://instagram.com/stanroot_creations" class="instagram-float" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+</a>
 <body>
 	<!------Header Section------>
 	<header>
@@ -238,46 +241,20 @@ Transforming spaces into elegant, functional and timeless interiors that reflect
 </div>
 
 </section>
-<!------------------before/after------------>
-<section class="before-after">
-    <div class="main-text">
-        <h2><span>Before</span> / After</h2>
-    </div>
 
-    <div class="ba-container">
-
-        <!-- Project 1 -->
-        <div class="ba-box">
-            <div class="img-container">
-                <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae" class="before">
-                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6" class="after">
-                <input type="range" min="0" max="100" value="50" class="slider">
-            </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="ba-box">
-            <div class="img-container">
-                <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511" class="before">
-                <img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a" class="after">
-                <input type="range" min="0" max="100" value="50" class="slider">
-            </div>
-        </div>
-
-    </div>
-</section>
+<!------------------Environmental Consultant------------>
 <section class="vastu">
     <div class="main-text">
-        <h2><span>Vastu</span> Consultation</h2>
+        <h2><span>Environmental</span> Consultation</h2>
     </div>
-	<!------------------Vastu Section------------>
+	
 
     <div class="vastu-container">
 
         <div class="vastu-card">
 
             <h3>Nitish Jangra</h3>
-            <p class="vastu-role">Certified Vastu Consultant</p>
+            <p class="vastu-role">Certified Environmental Consultant</p>
 
             <p class="vastu-desc">
                 Get expert guidance on home directions, room placement, kitchen position,
@@ -317,7 +294,7 @@ Transforming spaces into elegant, functional and timeless interiors that reflect
 
 		<div class="list">
 			<li><a href="#">8396065001</a></li>
-			<li><a href="#">stanrootcreations@gmail.com</a></li>
+			<li><a href="#">gagansharma635@gmail.com</a></li>
 		</div>
 
 		<div class="contact-icons">
@@ -358,7 +335,7 @@ Transforming spaces into elegant, functional and timeless interiors that reflect
 <!------------------Team section------------>
 <section class="team">
     <div class="main-text">
-        <h2><span>Our</span> Leadership</h2>
+        <h2><span>Our</span> Team</h2>
     </div>
 
     <div class="team-container">
@@ -366,48 +343,31 @@ Transforming spaces into elegant, functional and timeless interiors that reflect
         <div class="team-box">
             <h3>Founder</h3>
             <p>Nittin Jangra</p>
+            <p>8396065001</p>
         </div>
 
         <div class="team-box">
             <h3>Co-Founder</h3>
             <p>Jitender Sonha</p>
+            <p>7404893235</p>
         </div>
 
         <div class="team-box">
             <h3>Manager</h3>
             <p>Yogesh Jangra</p>
+            <p>9991358280</p>
         </div>
 
     </div>
 </section>
 <!------------------JAVA Section------------>
-<script>
-const sliders = document.querySelectorAll('.slider');
 
-sliders.forEach(slider => {
-
-    const afterImg = slider.parentElement.querySelector('.after');
-
-    slider.addEventListener('input', function(){
-        afterImg.style.clipPath = `inset(0 ${100 - slider.value}% 0 0)`;
-    });
-
-});
-</script>
-<script>
-const slider = document.querySelector('.slider');
-const afterImg = document.querySelector('.after');
-
-slider.addEventListener('input', function(){
-    afterImg.style.clipPath = `inset(0 ${100 - slider.value}% 0 0)`;
-});
-</script>
 <script>
 function sendToWhatsApp() {
 
 let name = document.getElementById("name").value;
 let email = document.getElementById("email").value;
-let phone = document.getElementById("phone").value;
+let phone = document.getElementById("phone").value;                            
 let message = document.getElementById("message").value;
 
 let whatsappNumber = "918396065001"; // apna number yaha daalo
