@@ -1072,3 +1072,95 @@ form textarea {
     justify-content: center;
     gap: 15px;
 }
+/* LIGHTBOX */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 80%;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    cursor: zoom-in;
+}
+
+.controls {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.prev, .next {
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+}
+
+.counter {
+    position: absolute;
+    bottom: 20px;
+    color: #ccc;
+    font-size: 16px;
+}
+.instagram-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 100px; /* WhatsApp ke upar dikhega */
+    right: 25px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 999;
+    transition: 0.3s;
+}
+
+.instagram-float img {
+    width: 30px;
+}
+
+.instagram-float:hover {
+    transform: scale(1.1);
+}
+.instagram-float::after {
+    content: "Follow us";
+    position: absolute;
+    right: 70px;
+    background: #000;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.instagram-float:hover::after {
+    opacity: 1;
+}
